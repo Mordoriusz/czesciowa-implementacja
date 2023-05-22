@@ -1,6 +1,15 @@
 import './App.css';
 import * as $ from 'jquery';
 import { useState } from 'react';
+import Navbar from './Navbar';
+import Footer from './Footer';
+import Main from './Main';
+import Menu from './Menu';
+import ONas from './ONas';
+import Kontakt from './Kontakt';
+import Koszyk from './Koszyk';
+import Login from './Login';
+import { Routes, Route, Navigate } from 'react-router-dom';
 let wpisy = [];
 async function get(setLoaded){
  //test pobierania danych z bazy
@@ -42,24 +51,27 @@ async function post(){ //test dodawania danych do bazy
 }
 
 function App() {
-  var [loaded, setLoaded] = useState(false);
-  if(!loaded) get(setLoaded);
-  if(loaded) return (
-    <div className="App">
-      <header className="App-header">
-        <button onClick={()=>{get(setLoaded);}}>Get</button>
-        <p id="get">
-          {wpisy}
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <form action="POST" id="form" name="form">
-          <input type='text' id="text" name="text"></input>
-        </form>
-        <button onClick={post}>Post</button>
-        <p id="post">Miejsce na dane</p>
-      </header>
-    </div>
-  );
+  //var [loaded, setLoaded] = useState(false);
+  //if(!loaded) get(setLoaded);
+  //if(loaded) return (
+    return (
+      <>
+        <Navbar />
+        <main>
+          <Routes>
+            <Route exact path='/Navbar' element={<Navbar />} />
+            <Route exact path='/' element={<Navigate to="/main" />} />
+            <Route path='/main' element={<Main />} />
+            <Route path='/menu' element={<Menu />} />
+            <Route path='/onas' element={<ONas />} />
+            <Route path='/kontakt' element={<Kontakt />} />
+            <Route path='/koszyk' element={<Koszyk />} />
+            <Route path='/login' element={<Login />} />
+          </Routes>
+        </main>
+        <Footer />
+      </>);
+  //);
 }
 
 export default App;
