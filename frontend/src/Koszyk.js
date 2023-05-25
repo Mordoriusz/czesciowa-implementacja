@@ -11,7 +11,7 @@ async function PobierzKoszyk(setLoaded) {
         <p className="nazwa">Nazwa dania</p>
         <div className="ile">
           <div className="iletop">
-            <input type="number" class="ilosc" defaultValue={1} min={1} max={99}></input>
+            <input type="number" className="ilosc" defaultValue={1} min={1} max={99}></input>
             <p className="cena">0.00zł</p>
           </div>
           <div className="ilebottom">

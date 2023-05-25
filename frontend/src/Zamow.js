@@ -1,6 +1,6 @@
 
 function Zamow() {
-    return <div className="formularz">
+    return <div>
         <p className="naglowek"><b>Finalizacja zamówienia</b></p>
         <form className="form" name="orderform">
             <p><label htmlFor="Imie">Imię</label><br/>

@@ -1,4 +1,3 @@
-
 function Main() {
     return <>
       <img src="schabowy.webp" alt="Zdjęcie kotleta schabowego"></img>

@@ -154,7 +154,7 @@ article{
   display:grid;
   grid-template-columns: 2fr 3fr 1fr;
 }
-.danie img{
+.danie img, .top img{
   border-radius: 20px;
 }
 .nazwa{
@@ -179,6 +179,7 @@ article{
   font-size: large;
 }
 .dodaj{
+  white-space: nowrap;
   border: 1px solid black;
   font-size: medium;
   margin: 10px;
@@ -209,6 +210,7 @@ article{
   grid-template-rows: 3fr 2fr;
 }
 .top, .bottom{
+  margin: -10px;
   align-items: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -267,4 +269,91 @@ article{
 .form input{
 border: 1px solid black;
 border-radius: 5px;
+}
+.nagl{
+  background-color: #C7B094;
+}
+table{
+  table-layout: auto;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+th{
+  border: 2px solid black;
+}
+.par{
+  background-color: #D4C5AF;
+}
+.npar{
+  background-color: #E5CDAE;
+}
+tr{
+  height: 15vh;
+  border: 2px solid black;
+}
+td{
+  border-right: 1px solid black;
+}
+.pracownik{
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-bottom: 5vw;
+}
+#lista{
+  margin-bottom: 1vh;
+}
+.statusbtn{
+  white-space: nowrap;
+  border: 1px solid black;
+  font-size: medium;
+  margin: 10px;
+  border-radius: 20px;
+  padding: 5px;
+  background-color: #DEB597;
+}
+.statusbtn:hover{
+  background-color: #e6d8c4;
+}
+.szczegoly{
+  margin: 5%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.szczegoly table{
+  margin-bottom: 3%;
+  font-size: large;
+}
+.return{
+  font-weight: bold;
+  font-size: x-large;
+}
+.dostawca, .status{
+  margin: 5%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+select{
+  text-align: center;
+  min-width: 20vw;
+  overflow-y: auto;
+  font-size: large;
+  margin-bottom: 3vh;
+}
+option{
+  border: 1px solid black;
+}
+option:checked{
+  background-color: lightgreen;
+}
+option:disabled{
+  background-color: darkgray;
+  color: lightgray;
+}
+.podnaglowek{
+  font-size: x-large;
+  text-align: center;
 }

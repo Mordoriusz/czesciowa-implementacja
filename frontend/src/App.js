@@ -12,6 +12,10 @@ import Login from './Login';
 import Danie from './Danie';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Zamow from './Zamow';
+import Pracownik from './Pracownik';
+import Status from './Status';
+import Dostawca from './Dostawca';
+import Szczegoly from './Szczegoly';
 let wpisy = [];
 async function get(setLoaded){
  //test pobierania danych z bazy
@@ -68,6 +72,10 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/danie' element={<Danie />} />
             <Route path='/zamow' element={<Zamow />} />
+            <Route path='/pracownik' element={<Pracownik />} />
+            <Route path='/status' element={<Status />} />
+            <Route path='/dostawca' element={<Dostawca />} />
+            <Route path='/szczegoly' element={<Szczegoly />} />
           </Routes>
         </main>
         <Footer />

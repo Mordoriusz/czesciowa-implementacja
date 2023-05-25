@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 var dania = [];
 async function PobierzDania(setLoaded) {
-  let id = useLocation().state.id;
+  let idnr = useLocation().state.id;
   dania=[];
   for(let i = 0; i< 5; i++){
     dania.push(
@@ -12,7 +12,7 @@ async function PobierzDania(setLoaded) {
       <div className="opis">
         <p className="nazwa">Nazwa dania</p>
         <p className="opiskr">Krótki opis</p>
-        <NavLink to="/danie" className="detale" state={{id:1}}>Szczegóły</NavLink>
+        <Link to="/danie" className="detale" state={{id:idnr}}>Szczegóły</Link>
       </div>
       <div className="koszyk">
         <p className="cena">0.00zł</p>
