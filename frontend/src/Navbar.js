@@ -5,7 +5,7 @@ function Navbar(){
             <NavLink to="/" id="logolink" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : ""}>
                 <img src="/logo.png" alt="Logo strony" id='logo'></img>
             </NavLink>
-            <NavLink to="./menu" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : ""}>
+            <NavLink to="./menu" state={{id:0}} className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : ""}>
                 Menu
             </NavLink>
             <NavLink to="./onas" className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : ""}>

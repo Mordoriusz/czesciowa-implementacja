@@ -9,7 +9,9 @@ import ONas from './ONas';
 import Kontakt from './Kontakt';
 import Koszyk from './Koszyk';
 import Login from './Login';
+import Danie from './Danie';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import Zamow from './Zamow';
 let wpisy = [];
 async function get(setLoaded){
  //test pobierania danych z bazy
@@ -51,9 +53,6 @@ async function post(){ //test dodawania danych do bazy
 }
 
 function App() {
-  //var [loaded, setLoaded] = useState(false);
-  //if(!loaded) get(setLoaded);
-  //if(loaded) return (
     return (
       <>
         <Navbar />
@@ -67,6 +66,8 @@ function App() {
             <Route path='/kontakt' element={<Kontakt />} />
             <Route path='/koszyk' element={<Koszyk />} />
             <Route path='/login' element={<Login />} />
+            <Route path='/danie' element={<Danie />} />
+            <Route path='/zamow' element={<Zamow />} />
           </Routes>
         </main>
         <Footer />
