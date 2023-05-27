@@ -1,0 +1,357 @@
+*{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+nav {
+  height: 90px;
+  text-align: center;
+  display: grid;
+  column-gap: 3vw;
+  grid-template-columns: 3fr 5fr 5fr 5fr 2fr;
+  background: #D3C4AE;
+  padding: 15px;
+}
+a, a:visited {
+  color: black;
+  text-decoration: none;
+}
+a:not(.active):not(#logolink):hover {
+  background: #e6d8c4;
+}
+nav a{
+  font-size: 2vw;
+  font-weight: bold;
+  overflow-y:auto;
+  max-height: 100%;
+  margin: 10px;
+  box-shadow: 1px 1px 1px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 100px;
+}
+nav a img{
+  object-fit: contain;
+  max-width: 90%;
+  max-height: 90%;
+}
+.active:not(#logolink){
+  box-shadow: 1px 1px 1px inset black;
+  background: #BCAC94;
+  opacity: 1;
+}
+#logolink{
+  margin: 0;
+  border: none;
+  box-shadow: none;
+}
+
+#logolink, #koszyklink{
+  display: flex;
+  justify-content: center;
+}
+#logo{
+  width: 100%;
+  height: 100%;
+}
+#koszyk{
+  width: 60%;
+  height: 60%;
+}
+main{
+  display: grid;
+  background-color: #F2E1CC;
+}
+main img{
+  max-width: 60%;
+  max-height: 100vh;
+  margin: auto;
+}
+footer{
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr;
+  width: 100%;
+  float: left;
+  background-color: #E5CDAE;
+}
+footer *{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+.socialmedia{
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  margin: 10px;
+}
+.smlogo{
+  height: 100%;
+  width: 100%;
+}
+.copyright{
+  font-size: 22pt;
+  text-align: center;
+}
+.pracownicy{
+  font-size:3vw;
+  margin: 10px;
+  box-shadow: 2px 2px 2px black;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 40px;
+  text-align: center;
+}
+#opis{
+  text-align: center;
+  padding: 50px;
+  margin: 0;
+  font-size: 18pt;
+}
+#kategorie{
+  height: 100px;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  background-color: #EAD4B4;
+}
+#kategorie *{
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button{
+  cursor: pointer;
+}
+article{
+  background-color: #D4C5AF;
+  margin: 20px;
+}
+#kategorie p{
+  font-size: 16pt;
+  font-weight: bold;
+}
+.kat{
+  font-size: 12pt;
+  overflow-y:auto;
+  max-height: 100%;
+  margin: 10px;
+  box-shadow: 1px 1px 1px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 100px;
+}
+.danie{
+  margin: 10px;
+  padding: 10px;
+  border-radius: 100px;
+  display:grid;
+  grid-template-columns: 2fr 3fr 1fr;
+}
+.danie img, .top img{
+  border-radius: 20px;
+}
+.nazwa{
+  font-weight: bold;
+  font-size: x-large;
+  margin-top: 10px;
+}
+.opiskr{
+  margin-top: -10px;
+}
+.detale{
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: #C7B094;
+}
+.koszyk{
+  margin-right: 50px;
+}
+.cena{
+  font-weight: bold;
+  font-size: large;
+}
+.dodaj{
+  white-space: nowrap;
+  border: 1px solid black;
+  font-size: medium;
+  margin: 10px;
+  border-radius: 20px;
+  padding: 5px;
+  background-color: #C7B094;
+}
+.dodaj:hover{
+  background-color: #e6d8c4;
+}
+.naglowek{
+  font-weight: bold;
+  font-size: xx-large;
+  text-align: center;
+}
+.onas p{
+  text-indent: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.kontakt{
+  text-align: center;
+  font-size: x-large;
+}
+.daniefull{
+  padding: 2%;
+  display: grid;
+  grid-template-rows: 3fr 2fr;
+}
+.top, .bottom{
+  margin: -10px;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+}
+.bottom{
+  text-align: center;
+  max-width: 100%;
+}
+.daniekoszyk{
+  border-radius: 40px;
+  padding: 5px;
+  background-color: #D4C5AF;
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 3fr 2fr 3fr;
+}
+.ile{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+.iletop .cena {
+  align-items: center;
+  justify-content: center;
+  display: inline-block;
+}
+.ilosc{
+  font-size: large;
+  text-align: center;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 7px;
+}
+.daniekoszyk img{
+  border-radius: 20px;
+}
+.cenafull{
+  font-size: large;
+  border-radius: 20px;
+  border: 1px solid black;
+  transform: translateX(200%);
+  max-width: 20%;
+  background-color: #E5CDAE;
+}
+.podsumowanie{
+  text-align: center;
+  margin: 20px;
+}
+.podsumowanie .detale{
+  font-size: x-large;
+}
+.form{
+  text-align: center;
+}
+.form input{
+border: 1px solid black;
+border-radius: 5px;
+}
+.nagl{
+  background-color: #C7B094;
+}
+table{
+  table-layout: auto;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+th{
+  border: 2px solid black;
+}
+.par{
+  background-color: #D4C5AF;
+}
+.npar{
+  background-color: #E5CDAE;
+}
+tr{
+  height: 15vh;
+  border: 2px solid black;
+}
+td{
+  border-right: 1px solid black;
+}
+.pracownik{
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-bottom: 5vw;
+}
+#lista{
+  margin-bottom: 1vh;
+}
+.statusbtn{
+  white-space: nowrap;
+  border: 1px solid black;
+  font-size: medium;
+  margin: 10px;
+  border-radius: 20px;
+  padding: 5px;
+  background-color: #DEB597;
+}
+.statusbtn:hover{
+  background-color: #e6d8c4;
+}
+.szczegoly{
+  margin: 5%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.szczegoly table{
+  margin-bottom: 3%;
+  font-size: large;
+}
+.return{
+  font-weight: bold;
+  font-size: x-large;
+}
+.dostawca, .status{
+  margin-bottom: 5%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+select{
+  text-align: center;
+  min-width: 20vw;
+  overflow-y: auto;
+  font-size: large;
+  margin-bottom: 3vh;
+}
+option{
+  border: 1px solid black;
+}
+option:checked{
+  background-color: lightgreen;
+}
+option:disabled{
+  background-color: darkgray;
+  color: lightgray;
+}
+.podnaglowek{
+  font-size: x-large;
+  text-align: center;
+}
