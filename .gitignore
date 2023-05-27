@@ -12,7 +12,6 @@
 /build
 
 # misc
-./*.sql
 ./*.txt
 .DS_Store
 .env.local

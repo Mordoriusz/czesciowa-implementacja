@@ -1,8 +1,38 @@
-
+import * as $ from 'jquery';
+import Cookies from 'js-cookie';
+async function WyslijFormularz(){
+    let url="http://localhost/conn.php";
+    let formdata = new FormData(document.getElementById("formzam"));
+    if(Cookies.get("koszyk")!=undefined){
+        await $.ajax({
+            url: url, 
+            type: "POST",
+            data: {
+                co: "zamow",
+                Imie: formdata.get("Imie"),
+                Nazwisko: formdata.get("Nazwisko"),
+                Ulica: formdata.get("Ulica"),
+                NrDomu: formdata.get("NrDomu"),
+                NrMieszkania: formdata.get("NrMieszkania"),
+                Miasto: formdata.get("Miasto"),
+                NrTelefonu: formdata.get("NrTelefonu"),
+                CzasDostarczeniaZamowienia: formdata.get("CzasDostarczeniaZamowienia"),
+                Koszyk: Cookies.get("koszyk")
+            },
+            success:function(wynik){
+                alert(wynik);
+            },
+            error: function(message){
+            } 
+        });
+    }
+    Cookies.remove("koszyk");
+    window.location.href("http://localhost:3000/")
+}
 function Zamow() {
     return <div>
         <p className="naglowek"><b>Finalizacja zamówienia</b></p>
-        <form className="form" name="orderform">
+        <form className="form" id="formzam" name="orderform">
             <p><label htmlFor="Imie">Imię</label><br/>
             <input type="text" name="Imie" placeholder="Wpisz imię..." required></input></p>
             <p><label htmlFor="Nazwisko">Nazwisko</label><br/>
@@ -19,7 +49,7 @@ function Zamow() {
             <input type="text" name="NrTelefonu" placeholder="Wpisz numer telefonu..." required></input></p>
             <p><label htmlFor="CzasDostarczeniaZamowienia">Data i czas dostawy</label><br/>
             <input type="datetime-local" name="CzasDostarczeniaZamowienia" placeholder="Wpisz ..." required min={new Date()}></input></p>
-            <input type="submit" name="submit" value="Złóż zamówienie" className="dodaj"></input>
+            <input type="button" name="submit" onClick={()=>WyslijFormularz()} value="Złóż zamówienie" className="dodaj"></input>
         </form>
     </div>;
 }

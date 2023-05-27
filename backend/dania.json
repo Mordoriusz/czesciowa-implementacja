@@ -1,0 +1,30 @@
+[
+    {
+        "Id": "1",
+        "IdKategorii": "2",
+        "NazwaDania": "Schabowy",
+        "Opis":"Pełny opis schabowego",
+        "OpisKrotki":"Opis krótki",
+        "Cena": 21.99,
+        "SciezkaDoZdjecia": "../../backend/Zdjecia/schabowy.webp"
+        },
+    {
+        "Id": "2",
+        "IdKategorii": "2",
+        "NazwaDania": "Schabowy",
+        "Opis":"Pełny opis schabowego",
+        "OpisKrotki":"Opis krótki",
+        "Cena": 21.99,
+        "SciezkaDoZdjecia": "../../backend/Zdjecia/schabowy.webp"
+    },
+    {
+        "Id": "3",
+        "IdKategorii": "1",
+        "NazwaDania": "Schabowy",
+        "Opis":"Pełny opis schabowego",
+        "OpisKrotki":"Opis krótki",
+        "Cena": 21.99,
+        "SciezkaDoZdjecia": "../../backend/Zdjecia/schabowy.webp"
+    }
+            
+]

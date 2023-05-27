@@ -1,8 +1,6 @@
 *{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  border: 0px solid black;
 }
-/* powyzsze do debugowania, rysuje granice wszystkich elementow na stronie */
 nav {
   height: 90px;
   text-align: center;
@@ -20,7 +18,7 @@ a:not(.active):not(#logolink):hover {
   background: #e6d8c4;
 }
 nav a{
-  font-size: 3vw;
+  font-size: 2vw;
   font-weight: bold;
   overflow-y:auto;
   max-height: 100%;
@@ -132,11 +130,11 @@ article{
   margin: 20px;
 }
 #kategorie p{
-  font-size: 20pt;
+  font-size: 16pt;
   font-weight: bold;
 }
 .kat{
-  font-size: 14pt;
+  font-size: 12pt;
   overflow-y:auto;
   max-height: 100%;
   margin: 10px;
@@ -331,7 +329,7 @@ td{
   font-size: x-large;
 }
 .dostawca, .status{
-  margin: 5%;
+  margin-bottom: 5%;
   text-align: center;
   align-items: center;
   justify-content: center;

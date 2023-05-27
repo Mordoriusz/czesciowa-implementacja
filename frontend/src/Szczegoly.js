@@ -1,33 +1,56 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import * as $ from 'jquery';
 let dania=[];
-function PobierzDania(){
+async function PobierzDania(setLoaded){
+    let idnr = useLocation().state.id;
     dania=[];
-    for(var i=0;i<7;i++){
+    let adres = "http://localhost/conn.php";
+    let wynik;
+    await $.ajax({
+        url: adres,
+        type: "POST",
+        data: {
+        co: "zamowienie",
+        id:idnr,
+        },
+        success: (response)=>{
+            wynik=JSON.parse(response);
+        }
+
+    }); 
+    for(let i=0; i<wynik.length; i++){
+        let wpis = wynik[i];
         if(i%2==0){
             dania.push(
-                <tr className="par" key={i}>
-                    <td>Nazwa dania</td>
-                    <td>Typ dania</td>
-                    <td>Cena</td>
-                </tr>
-            )
-        }else{
-            dania.push(
-                <tr className="npar" key={i}>
-                    <td>Nazwa dania</td>
-                    <td>Typ dania</td>
-                    <td>Cena</td>
-                </tr>
-            )
+                <tr className="par" id={wynik[i].Id} key={i}>
+                    <td>{wpis.NazwaDania}</td>
+                    <td>{wpis.NazwaKategorii}</td>
+                    <td>{wpis.Cena}</td>
+                </tr> 
+            );
         }
-    }
+        else{
+            dania.push(
+                <tr className="npar" id={wynik[i].Id} key={i}>
+                    <td>{wpis.NazwaDania}</td>
+                    <td>{wpis.NazwaKategorii}</td>
+                    <td>{wpis.Cena}</td>
+                </tr>
+            );
+        }
+    }   
+    setLoaded(true);
 }
 function Szczegoly() {
-        //pobierz id zeby cos robic
-    PobierzDania();
+    let [loaded, setLoaded] = useState(false);
+    if(!loaded){
+        PobierzDania(setLoaded);
+        return (<p>Ładowanie...</p>);
+    }
     return <div className="szczegoly">
-        <p className="naglowek"><b>Panel pracownika</b></p>
+        <p className="naglowek"><b>Szczegóły zamówienia</b></p>
         <table>
             <thead>
                 <tr className="nagl">
