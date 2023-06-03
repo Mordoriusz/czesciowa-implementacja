@@ -7,13 +7,18 @@ var cena = 0;
 let listaid = [];
 function ZmienIlosc(setLoaded, id, ile){
   listaid = JSON.parse(Cookies.get("koszyk"));
-  for(var i=0; i<listaid.length; i++){
-    if(i+1 == id){
-      listaid[i].ile = ile;
-    }
+  if(ile<0){
+    alert("Nie możesz zmienić ilości na ujemną!");
   }
-  Cookies.set("koszyk", JSON.stringify(listaid));
-  setLoaded(false);
+  else{
+    for(var i=0; i<listaid.length; i++){
+      if(i+1 == id){
+        listaid[i].ile = ile;
+      }
+    }
+    Cookies.set("koszyk", JSON.stringify(listaid));
+    setLoaded(false);
+  }
 }
 async function PobierzKoszyk(setLoaded) {
   cena = 0;
