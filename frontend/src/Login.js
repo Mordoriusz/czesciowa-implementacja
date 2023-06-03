@@ -1,28 +1,33 @@
 import * as $ from 'jquery';
 async function Zaloguj(){
   let passy = new FormData(document.getElementById("formlogin"));
-  let url="http://localhost/conn.php";
-  await $.ajax({
-    url: url, 
-    type: "POST",
-    data: {
-        co: "login",
-        login: passy.get("Login"),
-        haslo: passy.get("Haslo")
-    },
-    success:function(wynik){
-      wynik = wynik.substring(2);
-        if(wynik=="Nie ma takiego użytkownika"||wynik=="Niewłaściwe hasło"){
-          alert(wynik);
-        }
-        else{
-          alert("Zalogowano jako "+wynik);
-          window.location.href="http://localhost:3000/pracownik"
-        }
-    },
-    error: function(message){
-    } 
-});
+  if(passy.get("Login")==""||passy.get("Haslo")==""){
+    alert("Nie podano wymaganych danych!");
+  }
+  else{
+    let url="http://localhost/conn.php";
+    await $.ajax({
+      url: url, 
+      type: "POST",
+      data: {
+          co: "login",
+          login: passy.get("Login"),
+          haslo: passy.get("Haslo")
+      },
+      success:function(wynik){
+        wynik = wynik.substring(1);
+          if(wynik=="Nie ma takiego użytkownika"||wynik=="Niewłaściwe hasło"){
+            alert(wynik);
+          }
+          else{
+            alert("Zalogowano jako "+wynik);
+            window.location.href="http://localhost:3000/pracownik"
+          }
+      },
+      error: function(message){
+      } 
+    });
+  }
 }
 function Login() {
     return <div>
