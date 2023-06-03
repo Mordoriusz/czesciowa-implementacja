@@ -3,31 +3,44 @@ import Cookies from 'js-cookie';
 async function WyslijFormularz(){
     let url="http://localhost/conn.php";
     let formdata = new FormData(document.getElementById("formzam"));
-    if(Cookies.get("koszyk")!=undefined){
-        await $.ajax({
-            url: url, 
-            type: "POST",
-            data: {
-                co: "zamow",
-                Imie: formdata.get("Imie"),
-                Nazwisko: formdata.get("Nazwisko"),
-                Ulica: formdata.get("Ulica"),
-                NrDomu: formdata.get("NrDomu"),
-                NrMieszkania: formdata.get("NrMieszkania"),
-                Miasto: formdata.get("Miasto"),
-                NrTelefonu: formdata.get("NrTelefonu"),
-                CzasDostarczeniaZamowienia: formdata.get("CzasDostarczeniaZamowienia"),
-                Koszyk: Cookies.get("koszyk")
-            },
-            success:function(wynik){
-                alert(wynik);
-            },
-            error: function(message){
-            } 
-        });
+    if(
+        formdata.get("Imie")=="" || 
+        formdata.get("Nazwisko")=="" || 
+        formdata.get("Ulica")=="" || 
+        formdata.get("NrDomu")=="" || 
+        formdata.get("Miasto")=="" || 
+        formdata.get("NrTelefonu")=="" || 
+        formdata.get("CzasDostarczeniaZamowienia")==""
+    ){
+        alert("Nie podano wymaganych danych!");
     }
-    Cookies.remove("koszyk");
-    window.location.href("http://localhost:3000/")
+    else {
+        if(Cookies.get("koszyk")!=undefined){
+            await $.ajax({
+                url: url, 
+                type: "POST",
+                data: {
+                    co: "zamow",
+                    Imie: formdata.get("Imie"),
+                    Nazwisko: formdata.get("Nazwisko"),
+                    Ulica: formdata.get("Ulica"),
+                    NrDomu: formdata.get("NrDomu"),
+                    NrMieszkania: formdata.get("NrMieszkania"),
+                    Miasto: formdata.get("Miasto"),
+                    NrTelefonu: formdata.get("NrTelefonu"),
+                    CzasDostarczeniaZamowienia: formdata.get("CzasDostarczeniaZamowienia"),
+                    Koszyk: Cookies.get("koszyk")
+                },
+                success:function(wynik){
+                    alert(wynik);
+                },
+                error: function(message){
+                } 
+            });
+        }
+        Cookies.remove("koszyk");
+        window.location.href = "http://localhost:3000/";
+    }
 }
 function Zamow() {
     return <div>
