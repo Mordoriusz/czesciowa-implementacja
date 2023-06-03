@@ -7,20 +7,25 @@ let ile;
 let idnr;
 async function PrzypiszDostawce(){
     let val = document.getElementById("dostawcaselect").value;
-    let adres = "http://localhost/conn.php";
-    await $.ajax({
-        url: adres,
-        type: "POST",
-        data: {
-            co: "zmiendostawce",
-            id:idnr,
-            dostawca: val
-        },
-        success: (response)=>{
-            alert(response);
-        }
-    }); 
-    window.location.href = "http://localhost:3000/pracownik";
+    if(val==null || val == ""){
+        alert("Nie wybrano dostawcy!");
+    }
+    else{
+        let adres = "http://localhost/conn.php";
+        await $.ajax({
+            url: adres,
+            type: "POST",
+            data: {
+                co: "zmiendostawce",
+                id:idnr,
+                dostawca: val
+            },
+            success: (response)=>{
+                alert(response);
+            }
+        }); 
+        window.location.href = "http://localhost:3000/pracownik";
+    }
 
 }
 async function PobierzDostawcow(setLoaded) {
